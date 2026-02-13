@@ -1,0 +1,55 @@
+def 출력():
+    print(name)
+    return(name)
+
+    
+def 추가():
+    friend = input("추가할 이름 입력: ")
+    for i in range(len(name)):
+        if friend == name[i]:
+            print(f"{friend}는 리스트에 있습니다.")
+            break
+        else:
+            name.append(friend)
+    return(name)
+
+    
+def 삭제():
+    for i in range(len(name)):
+        if delete == name[i]:
+            name.remove(delete)
+            break
+        else:
+            print(f"{friend}는 리스트에 없습니다.")
+    return(name)
+
+
+def 변경():
+    x = name.index(change1)
+    name.insert(x, change2)
+    return(name)
+
+
+def main():
+    if menu == 1:
+        출력()
+    elif menu == 2:
+        추가()
+        print(name)
+    elif menu == 3:
+        delete = input("삭제할 이름 입력: ")
+        삭제()
+        print(name)
+    elif menu == 4:
+        change1 = input('변경할 이름 입력: ')
+        change2 = input("새로운 이름 입력: ")
+        변경()
+        print(name)
+    elif menu not in [1, 2, 3, 4, 9]:
+        print("범위를 벗어났습니다.")
+
+print("-"*10)
+print("1. 친구 리스트 출력\n2. 친구 추가\n3. 친구 삭제\n4. 이름 변경\n9.종료")
+print("-"*10)
+menu = int(input("메뉴 선택: "))
+main()
